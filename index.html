@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finca para Celebraciones</title>
+  <meta name="description" content="Alquila nuestra finca para bodas, cumpleaños y eventos. Espacio amplio, seguro y con todas las comodidades." />
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+  <!-- Fuente principal: Inter y Oleo Script -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Oleo+Script:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Flatpickr (calendario) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ================== 1. PORTADA ================== -->
+<header class="header" id="inicio">
+  <div class="container">
+    <h1>
+      <!-- Logo izquierdo -->
+      <img src="img/logo.png" alt="Logo izquierdo" class="header-logo left" />
+
+      <!-- Palabras del título -->
+      <span class="palabra2">EL POZO HONDÓN</span>
+
+      <!-- Logo derecho -->
+      <img src="img/logo.png" alt="Logo derecho" class="header-logo right" />
+    </h1>
+    <p>EL LUGAR PERFECTO PARA CELEBRAR</p>
+  </div>
+</header>
+
+  <!-- ================== 3. GALERÍA (CARRUSEL CON FLECHAS) ================== -->
+  <section class="gallery" id="galeria">
+    <div class="container">
+      <h2>Conoce Nuestro Espacio</h2>
+      <p>Descubre las instalaciones navegando entre las fotos.</p>
+
+      <!-- Contenedor del carrusel -->
+      <div class="carousel">
+        <!-- Imágenes del carrusel -->
+        <img src="img/img2.jpeg" alt="Patio principal" class="carousel-img active" />
+        <img src="img/img1.jpeg" alt="Zona de barbacoa" class="carousel-img" />
+        <img src="img/img3.jpeg" alt="Zona interior cubierta" class="carousel-img" />
+        <img src="img/img4.jpeg" alt="Decoración para eventos" class="carousel-img" />
+
+        <!-- Flechas de navegación -->
+        <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
+        <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
+      </div>
+
+      <!-- Indicadores (puntos) -->
+      <div class="dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+      </div>
+    </div>
+  </section>
+
+<!-- ================== 2. SOBRE NOSOTROS + LOCALIZACIÓN ================== -->
+  <section class="about" id="nosotros">
+    <div class="container">
+      <h2>¡BIENVENIDOS!</h2>
+      <p>
+        UNA FINCA RURAL CON MUCHO ENCANTO, donde cada rincón ha sido creado por Raquel y su familia. Aquí celebramos momentos únicos: cumpleaños, reuniones y todo tipo de eventos 	especiales en un entorno natural y acogedor. Descubre un lugar pensado para disfrutar, reír y crear recuerdos inolvidables.
+      </p>
+
+      <h3>¿Dónde estamos?</h3>
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d7803.046693082287!2d-3.2720614671778137!3d40.17421164326172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDEwJzMxLjQiTiAzwrAxNicwMS4zIlc!5e1!3m2!1ses!2ses!4v1754474097452!5m2!1ses!2ses" 
+	  width="100%" 
+	  height="350" 
+	  style="border:0;" 
+	  allowfullscreen="" 
+	  loading="lazy" 
+	  referrerpolicy="no-referrer-when-downgrade">
+	</iframe>
+      </div>
+      <p><strong>Dirección:</strong> Camino de cabeza Blanca, 28590,Villarejo de Salvanés, Madrid</p>
+    </div>
+  </section>
+
+  <!-- ================== 4. CONDICIONES ================== -->
+  <section class="terms" id="condiciones">
+    <div class="container">
+      <h2>Condiciones de Uso</h2>
+      <p>
+	<ul>
+  <li>La finca debe ser entregada en las mismas condiciones de la entrega, incluida la retirada de basura.</li>
+  
+  <li>
+    <strong>Cancelaciones:</strong>
+    <ul class="sublista">
+      <li>Cancelación con más de 15 días: sin coste.</li>
+      <li>Cancelación entre 14 y 7 días: sujeto al 50% del importe de la señal.</li>
+      <li>Cancelación con menos de 7 días: se reclamará el importe total.</li>
+      <li>La arrendadora podrá cancelar por motivos de seguridad o climatológicos.</li>
+    </ul>
+  </li>
+  
+  <li>Prohibido hacer fuego, lanzar cohetes, etc. </li>
+  <li>El precio de la reserva variará en función de los requisitos del evento que se especifican en la solicitud.</li>
+</ul>
+</p>
+    </div>
+  </section>
+
+  <!-- ================== 5. RESERVAS ================== -->
+  <section class="booking" id="reservas">
+    <div class="container">
+      <h2>Solicita tu Reserva</h2>
+      <p>Completa el formulario y te responderemos en menos de 24 horas.</p>
+
+      <form action="https://formspree.io/f/xeozrkzb" method="POST" id="reserva-form" class="multi-step-form">
+
+  <!-- Paso 1 -->
+  <div class="form-step active">
+    <label for="nombre">Nombre completo *</label>
+    <input type="text" id="nombre" name="nombre" required />
+
+    <label for="motivo">Motivo del evento *</label>
+    <input type="text" id="motivo" name="motivo" required />
+
+    <label for="personas">Número de personas estimado *</label>
+    <input type="number" id="personas" name="personas" min="1" required />
+
+    <label for="ninos">Número de niños estimado *</label>
+    <input type="number" id="ninos" name="ninos" min="0" required />
+
+    <button type="button" class="btn next-step">Siguiente</button>
+  </div>
+
+  <!-- Paso 2 -->
+  <div class="form-step">
+    <!-- Fecha del evento -->
+<label for="fecha">Fecha del evento *</label>
+<input type="text" id="fecha" name="fecha" required />
+
+<!-- Grupo de horas: entrada y salida -->
+<div class="time-group">
+  <div class="time-field">
+    <label for="horaEntrada">Hora de entrada *</label>
+    <input type="time" id="horaEntrada" name="horaEntrada" required />
+  </div>
+  <div class="time-field">
+    <label for="horaSalida">Hora de salida *</label>
+    <input type="time" id="horaSalida" name="horaSalida" required />
+  </div>
+</div>
+
+    <div style="display: flex; justify-content: space-between;">
+  <button type="button" class="btn prev-step" style="margin-right: 10px;">Atrás</button>
+  <button type="button" class="btn next-step">Siguiente</button>
+</div>
+
+  </div>
+
+  <!-- Paso 3 -->
+  <div class="form-step">
+    <label>Servicios adicionales</label>
+    <label><input type="checkbox" name="servicios[]" value="Barbacoa"> Barbacoa</label>
+    <label><input type="checkbox" name="servicios[]" value="Plancha de gas"> Plancha de gas</label>
+
+    <label>¿Habrá consumo de alcohol? *</label>
+    <select name="consumoAlcohol" required>
+      <option value="">Selecciona una opción</option>
+      <option value="Sí">Sí</option>
+      <option value="No">No</option>
+    </select>
+
+    <label>¿Necesidad de baja bebidas con antelación? *</label>
+    <select name="bajaBebidas" required>
+      <option value="">Selecciona una opción</option>
+      <option value="Sí">Sí</option>
+      <option value="No">No</option>
+    </select>
+
+    <div style="display: flex; justify-content: space-between;">
+  <button type="button" class="btn prev-step" style="margin-right: 10px;">Atrás</button>
+  <button type="button" class="btn next-step">Siguiente</button>
+</div>
+
+  </div>
+
+  <!-- Paso 4 -->
+  <div class="form-step">
+    <label>Extras en el evento</label>
+    <label><input type="checkbox" name="extras[]" value="Catering"> Catering</label>
+    <label><input type="checkbox" name="extras[]" value="Castillo hinchable"> Castillo hinchable</label>
+    <label><input type="checkbox" name="extras[]" value="Juegos acuáticos"> Juegos acuáticos</label>
+    <label><input type="checkbox" name="extras[]" value="Escenario"> Escenario</label>
+    <label><input type="checkbox" name="extras[]" value="Equipo de música"> Equipo de música</label>
+
+    <div style="display: flex; justify-content: space-between;">
+  <button type="button" class="btn prev-step" style="margin-right: 10px;">Atrás</button>
+  <button type="submit" class="btn">Enviar Solicitud de Reserva</button>
+</div>
+
+  </div>
+
+</form>
+
+
+      <p class="info-text">
+        Una vez recibida tu solicitud, el propietario la revisará y te responderá por correo o teléfono.
+        Si la fecha ya está ocupada, se te añadirá a una <strong>lista de espera</strong> por orden de solicitud.
+        En caso de cancelación, se avisará al siguiente en la lista.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================== 6. CONTACTO ================== -->
+  <section class="contact" id="contacto">
+    <div class="container">
+      <h2>Contacto</h2>
+      <p>¿Tienes dudas? Escríbenos por cualquiera de estos canales:</p>
+
+      <div class="contact-info">
+        <div class="item">
+          <i class="fas fa-phone"></i>
+          <span><a href="tel:+34625207305">+34 625 207 305</a></span>
+        </div>
+        <div class="item">
+          <i class="fas fa-envelope"></i>
+          <span><a href="mailto:elpozohondon@gmail.com">elpozohondon@gmail.com</a></span>
+        </div>
+        <div class="item">
+          <i class="fab fa-whatsapp"></i>
+          <span><a href="https://wa.me/34625207305" target="_blank">WhatsApp</a></span>
+        </div>
+	<div class="item">
+          <i class="fab fa-instagram"></i>
+          <span><a href="https://www.instagram.com/celebra_elpozohondon?igsh=MXF1aDF4bDJjZ3dqaw=="_blank">Instagram</a></span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== FOOTER ================== -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Finca El Pozohondon. Todos los derechos reservados.</p>
+      <div class="whatsapp-btn">
+        <a href="https://wa.me/34625207305" target="_blank">
+          <i class="fab fa-whatsapp"></i> Contacto rápido
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================== JAVASCRIPT (Carrusel + Calendario) ================== -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+  // ================== CARRUSEL DE IMÁGENES ==================
+  let currentImageIndex = 0;
+  const images = document.querySelectorAll(".carousel-img");
+  const dots = document.querySelectorAll(".dot");
+
+  function showImage(index) {
+    if (index >= images.length) currentImageIndex = 0;
+    else if (index < 0) currentImageIndex = images.length - 1;
+    else currentImageIndex = index;
+
+    images.forEach(img => img.classList.remove("active"));
+    images[currentImageIndex].classList.add("active");
+
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[currentImageIndex].classList.add("active");
+  }
+
+  function moveCarousel(direction) {
+    showImage(currentImageIndex + direction);
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener("click", () => {
+      const index = parseInt(dot.getAttribute("data-index"));
+      showImage(index);
+    });
+  });
+
+  // ================== FORMULARIO MULTI-STEP ==================
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('reserva-form');
+    const steps = Array.from(form.querySelectorAll('.form-step'));
+    const nextBtns = form.querySelectorAll('.next-step');
+    const prevBtns = form.querySelectorAll('.prev-step');
+    let currentStep = 0;
+
+    function showStep(index) {
+      steps.forEach((step, i) => {
+        step.classList.toggle('active', i === index);
+      });
+    }
+
+    nextBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const inputs = steps[currentStep].querySelectorAll('input[required]');
+        let valid = true;
+        inputs.forEach(input => {
+          if (!input.checkValidity()) {
+            input.reportValidity();
+            valid = false;
+          }
+        });
+        if (!valid) return;
+
+        if (currentStep < steps.length - 1) {
+          currentStep++;
+          showStep(currentStep);
+        }
+      });
+    });
+
+    prevBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (currentStep > 0) {
+          currentStep--;
+          showStep(currentStep);
+        }
+      });
+    });
+
+    showStep(currentStep);
+
+    // Inicializar flatpickr para el campo fecha
+    if (window.flatpickr) {
+      flatpickr("#fecha", {
+        minDate: "today",
+        dateFormat: "d/m/Y",
+        disableMobile: true,
+        locale: {
+          firstDayOfWeek: 1,
+          weekdays: {
+            shorthand: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
+            longhand: ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"]
+          },
+          months: {
+            shorthand: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+            longhand: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+          }
+        }
+      });
+    }
+  });
+</script>
+
+
+</body>
+</html>
