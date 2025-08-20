@@ -1,0 +1,437 @@
+/* 
+  🌿 style.css - Plantilla para Finca El Pozo Hondon
+  Versión: 1.0
+  Descripción: Estilos organizados por secciones para fácil mantenimiento
+*/
+
+/* ==================== 1. REINICIO Y BASE ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "My Soul", cursive;
+  line-height: 1.6;
+  color: #2c5530;
+  background-color: #fffcc5; /* Fondo crema claro */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+/* ==================== 2. ENCABEZADO (HEADER) ==================== */
+.header {
+  background: #2c5530;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.header h1 {
+  margin: 0;
+  letter-spacing: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* espacio entre "Finca" y "El Pozohondon" */
+}
+.header h1 {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Espacio entre palabras */
+}
+
+.header .palabra2 {
+  font-family:"My Soul", cursive;
+  font-size: 2.5em;
+  color: #FFFB9D
+}
+
+.header p {
+  font-family: "My Soul", cursive;
+  font-size: 1.3em;
+  margin: 15px 0 0;
+  color: #b6996d;
+  opacity: 0.9;
+}
+/* Evita conflictos con .highlight si lo usas en otro lugar */
+.header .highlight {
+  color: #000000;
+}
+/* ===== LOGOS EN EL HEADER (sin romper el diseño actual) ===== */
+.header h1 {
+  position: relative;
+  align-items: center;
+}
+
+.header-logo {
+  width: 250px;
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  opacity: 0.9;
+}
+
+.header-logo.left {
+  order: -1; /* Logo izquierdo antes de "Finca" */
+}
+
+.header-logo.right {
+  order: 3; /* Logo derecho después de "El Pozohondón" */
+}
+
+/* Evita que el texto se mueva si los logos son muy grandes */
+.header .palabra1,
+.header .palabra2 {
+  white-space: nowrap;
+}
+
+/* Ajuste de espaciado entre logos y texto */
+.header h1 .palabra1 {
+  margin-left: 50px;
+}
+.header h1 .palabra2 {
+  margin-right: 50px;
+}
+
+/* Responsive: en móviles, los logos se reducen */
+@media (max-width: 600px) {
+  .header-logo {
+    width: 50px;
+  }
+  .header h1 {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .header-logo.left, 
+  .header-logo.right {
+    order: initial;
+  }
+  .header .palabra1,
+  .header .palabra2 {
+    margin: 0;
+  }
+}
+/* ==================== 3. TIPOS DE LETRA (FONTS) ==================== */
+/* Asegúrate de tener esta fuente en el <head> de index.html */
+/*
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Oleo+Script:wght@700&display=swap" rel="stylesheet">
+*/
+
+
+/* ==================== 4. TÍTULOS Y TEXTOS ==================== */
+h2 {
+  color: #2c5530;
+  margin-bottom: 15px;
+  font-size: 1.8em;
+}
+
+h3 {
+  color: #2c5530;
+  margin: 15px 0;
+}
+
+
+/* ==================== 5. SECCIÓN "SOBRE NOSOTROS" ==================== */
+.about p {
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+
+/* ==================== 6. CARRUSEL DE FOTOS ==================== */
+.carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: none;
+}
+
+.carousel-img.active {
+  display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 1.5em;
+  padding: 15px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  outline: none;
+}
+
+.carousel-btn:hover {
+  opacity: 1;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Indicadores (puntos) */
+.dots {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background: #2c5530;
+}
+
+
+/* ==================== 7. SECCIÓN "CONDICIONES" ==================== */
+.terms ul {
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+.terms li {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+/* Sublistas (ej: Cancelaciones) */
+.terms ul ul {
+  margin-left: 40px !important;
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.terms ul ul li {
+  margin: 6px 0;
+}
+
+
+/* ==================== 8. FORMULARIO DE RESERVAS ==================== */
+form {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: 600;
+  color: #2c5530;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn {
+  background: #2c5530;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.btn:hover {
+  background: #1e3d22;
+}
+
+.info-text {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 15px;
+  text-align: center;
+}
+
+
+/* ==================== 9. CONTACTO ==================== */
+.contact-info {
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.item {
+  margin: 12px 0;
+  font-size: 1.1em;
+}
+
+.item i {
+  width: 30px;
+  color: #2c5530;
+}
+
+.social {
+  margin-top: 20px;
+}
+
+.social a {
+  font-size: 1.5em;
+  margin: 0 10px;
+  color: #4a7c59;
+}
+
+.social a:hover {
+  color: #2c5530;
+}
+
+
+/* ==================== 10. FOOTER ==================== */
+.footer {
+  background: #2c5530;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.whatsapp-btn a {
+  color: #a8d8a0;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+/* ==================== 11. RESPONSIVE (MÓVILES) ==================== */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5em;
+  }
+  .container {
+    width: 95%;
+  }
+  .carousel-img {
+    height: 300px;
+  }
+  .header .palabra1,
+  .header .palabra2 {
+    font-size: 2.5em;
+  }
+}
+
+
+/* ========= FORMULARIO MULTIPASO ========= */
+.form-step {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.form-step.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===== GRUPO DE HORAS (entrada y salida) ===== */
+.time-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
+
+.time-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 140px;
+}
+
+.time-field label {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.time-field input[type="time"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: white;
+  width: 120px;
+  text-align: center;
+}
+
+.time-field input[type="time"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+/* Responsive: en móviles, los campos se apilan */
+@media (max-width: 480px) {
+  .time-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  .time-field {
+    width: 100%;
+    text-align: center;
+  }
+}
